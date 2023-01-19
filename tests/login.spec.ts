@@ -24,7 +24,7 @@ describe("Login", () => {
   beforeEach(async () => {
     registeredUser = await registerUserTask();
     browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       defaultViewport: null,
     });
 
