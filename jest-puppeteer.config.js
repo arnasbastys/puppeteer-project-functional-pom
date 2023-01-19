@@ -3,5 +3,5 @@ module.exports = {
     headless: false,
     args: ["--window-size=1920,1080"],
   },
-  browser: "chromium",
+  product: "chromium",
 };
