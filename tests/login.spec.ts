@@ -44,6 +44,7 @@ describe("Login", () => {
       (el) => el.textContent
     );
     expect(userEmail?.trim()).toEqual(registeredUser.email);
-    browser.close();
   });
+
+  afterAll(() => browser.close());
 });

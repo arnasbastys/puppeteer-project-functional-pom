@@ -16,7 +16,7 @@ jobs:
         ports:
           - 3000:3000
     steps:
-      - uses: actions/checkout@v3
+      - uses: browser-actions/setup-chrome@latest
       - name: Test pages
         run: yarn && yarn test
       # - name: Archive test report
