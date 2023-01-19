@@ -9,7 +9,8 @@ on:
 
 jobs:
   test-chrome:
-    runs-on: ghcr.io/puppeteer/puppeteer:latest
+    runs-on: ubuntu-latest
+    container: ghcr.io/puppeteer/puppeteer:latest
     services:
       juice_shop_app:
         image: bkimminich/juice-shop
