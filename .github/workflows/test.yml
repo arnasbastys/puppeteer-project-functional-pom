@@ -9,7 +9,7 @@ on:
 
 jobs:
   test-chrome:
-    runs-on: ubuntu-latest
+    runs-on: ghcr.io/puppeteer/puppeteer:latest
     services:
       juice_shop_app:
         image: bkimminich/juice-shop
