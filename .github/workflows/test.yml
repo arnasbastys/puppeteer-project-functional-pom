@@ -17,6 +17,7 @@ jobs:
           - 3000:3000
     steps:
       - uses: browser-actions/setup-chrome@latest
+      - uses: actions/checkout@v3
       - name: Test pages
         run: yarn && yarn test
       # - name: Archive test report
