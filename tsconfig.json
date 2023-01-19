@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "es2022",
+    "target": "es2022",
+    "lib": ["es2022", "DOM"],
+    "types": [
+      "node",
+      "jest",
+      "ts-node",
+      "puppeteer",
+      "jest-environment-puppeteer",
+      "expect-puppeteer"
+    ],
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "baseUrl": ".",
+    "moduleResolution": "NodeNext",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@pom": ["support/pom"],
+      "@constants": ["./support/constants"]
+    }
+  },
+  "include": ["**/*.ts"]
+}
