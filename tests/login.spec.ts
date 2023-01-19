@@ -1,7 +1,7 @@
 import { baseUrl } from "@constants";
 import { loginPage, registerUserTask, User, navigationBar } from "@pom";
 
-import puppeteer, { Protocol } from "puppeteer";
+import puppeteer, { Browser, Page, Protocol, Puppeteer } from "puppeteer";
 
 const cookiesToSet: Protocol.Network.CookieParam[] = [
   {
@@ -16,19 +16,19 @@ const cookiesToSet: Protocol.Network.CookieParam[] = [
   },
 ];
 
-describe("Login", async () => {
+describe("Login", () => {
   let registeredUser: User;
-
-  const browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: null,
-  });
-
-  const page = await browser.newPage();
+  let page: Page;
+  let browser: Browser;
 
   beforeEach(async () => {
     registeredUser = await registerUserTask();
+    browser = await puppeteer.launch({
+      headless: false,
+      defaultViewport: null,
+    });
 
+    page = await browser.newPage();
     await page.setCookie(...cookiesToSet);
     await page.goto(`${baseUrl}/#/login`, { waitUntil: "domcontentloaded" });
   });
