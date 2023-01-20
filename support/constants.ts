@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
 
-export const baseUrl = "http://localhost:3000";
+export const baseUrl = "juice_shop_app"; // || "http://localhost:3000";
 
 export const user = {
   firstName: faker.name.firstName(),
