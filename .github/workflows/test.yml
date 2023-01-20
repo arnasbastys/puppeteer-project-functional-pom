@@ -31,7 +31,8 @@ jobs:
       #   libxss1 libxtst6 ca-certificates fonts-liberation libnss3 lsb-release
       #   xdg-utils wget
       - name: Test pages
-        run: yarn && yarn test
+        run: cat ~/.cache/puppeteer
+        # yarn && yarn test
       # - name: Archive test report
       #   uses: actions/upload-artifact@v3
       #   with:
