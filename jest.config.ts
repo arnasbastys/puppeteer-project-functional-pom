@@ -1,6 +1,6 @@
 import type { Config } from "jest";
 const config: Config = {
-  testEnvironment: "node",
+  // testEnvironment: "node",
   testPathIgnorePatterns: ["/node_modules/"],
   //   setupFilesAfterEnv: ["./jest.setup.js"],
   transform: {

@@ -1,9 +1,7 @@
 import { baseUrl } from "@constants";
 import { loginPage, registerUserTask, User, navigationBar } from "@pom";
 
-import puppeteer, { Browser, Page, Protocol, Puppeteer } from "puppeteer";
-
-const cookiesToSet: Protocol.Network.CookieParam[] = [
+const cookiesToSet = [
   {
     name: "cookieconsent_status",
     value: "dismiss",
@@ -18,18 +16,9 @@ const cookiesToSet: Protocol.Network.CookieParam[] = [
 
 describe("Login", () => {
   let registeredUser: User;
-  let page: Page;
-  let browser: Browser;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     registeredUser = await registerUserTask();
-    browser = await puppeteer.launch({
-      // headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-      defaultViewport: null,
-    });
-
-    page = await browser.newPage();
     await page.setCookie(...cookiesToSet);
     await page.goto(`${baseUrl}/#/login`, { waitUntil: "domcontentloaded" });
   });
@@ -46,6 +35,4 @@ describe("Login", () => {
     );
     expect(userEmail?.trim()).toEqual(registeredUser.email);
   });
-
-  afterAll(() => browser.close());
 });
