@@ -34,7 +34,7 @@ jobs:
       #   libxss1 libxtst6 ca-certificates fonts-liberation libnss3 lsb-release
       #   xdg-utils wget
       - name: Test pages
-        run: apt-get install xvfb && yarn && yarn test
+        run: yarn && yarn test
       # - name: Archive test report
       #   uses: actions/upload-artifact@v3
       #   with:
