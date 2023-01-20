@@ -10,9 +10,9 @@ on:
 jobs:
   test-chrome:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/puppeteer/puppeteer:latest
-      options: --user 1001
+    # container:
+    #   image: ghcr.io/puppeteer/puppeteer:latest
+    #   options: --user 1001
     services:
       juice_shop_app:
         image: bkimminich/juice-shop
