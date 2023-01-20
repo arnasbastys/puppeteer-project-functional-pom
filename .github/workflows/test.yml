@@ -20,6 +20,9 @@ jobs:
           - 3000:3000
     steps:
       # - uses: browser-actions/setup-chrome@latest
+      - name: Sleep for 30 seconds
+        run: sleep 30s
+        shell: bash
       - uses: actions/checkout@v3
       # - uses: actions/setup-node@v3
       #   with:
