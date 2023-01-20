@@ -25,6 +25,7 @@ describe("Login", () => {
     registeredUser = await registerUserTask();
     browser = await puppeteer.launch({
       // headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
       defaultViewport: null,
     });
 
