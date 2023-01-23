@@ -12,8 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/puppeteer/puppeteer:latest
-      # options: --user 1001
-      options: --cap-add=SYS_ADMIN
+      options: --cap-add=SYS_ADMIN --user 1001
     services:
       juice_shop_app:
         image: bkimminich/juice-shop
@@ -37,6 +36,12 @@ jobs:
       #   libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1
       #   libxss1 libxtst6 ca-certificates fonts-liberation libnss3 lsb-release
       #   xdg-utils wget
+      - name: Curl1
+      - run: curl localhost:3000
+      - name: Curl2
+      - run: curl 127.0.0.1:3000
+      - name: Curl3
+      - run: curl juice_shop_app:3000
       - name: Test pages
         run: yarn && yarn test
       # - name: Archive test report
