@@ -10,8 +10,8 @@ on:
 jobs:
   test-chrome:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/puppeteer/puppeteer:latest
+    # container:
+    #   image: ghcr.io/puppeteer/puppeteer:latest
     #   options: >-
     #     --cap-add=SYS_ADMIN
     #     --user 1001
