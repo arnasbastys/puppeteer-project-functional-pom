@@ -13,6 +13,7 @@ jobs:
     container:
       image: ghcr.io/puppeteer/puppeteer:latest
       # options: --user 1001
+      options: --cap-add=SYS_ADMIN
     services:
       juice_shop_app:
         image: bkimminich/juice-shop
