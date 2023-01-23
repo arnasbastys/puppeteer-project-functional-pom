@@ -20,11 +20,6 @@ describe("Login", () => {
   beforeAll(async () => {
     registeredUser = await registerUserTask();
     await page.setCookie(...cookiesToSet);
-    await page.setViewport({
-      width: 1920,
-      height: 1080,
-      deviceScaleFactor: 1,
-    });
     await page.goto(`${baseUrl}/#/login`, { waitUntil: "domcontentloaded" });
   });
 
