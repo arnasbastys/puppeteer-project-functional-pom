@@ -43,7 +43,7 @@ jobs:
         run: curl localhost
       - name: Curl2
         continue-on-error: true
-        run: curl 127.0.0.1:3001
+        run: curl 0.0.0.0:3001
       - name: Curl3
         continue-on-error: true
         run: curl juice_shop_app:3001
