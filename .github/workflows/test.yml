@@ -40,7 +40,7 @@ jobs:
       #   xdg-utils wget
       - name: Curl1
         continue-on-error: true
-        run: curl localhost
+        run: curl http://192.168.99.100:3000
       - name: Curl2
         continue-on-error: true
         run: curl 127.0.0.1:3000
