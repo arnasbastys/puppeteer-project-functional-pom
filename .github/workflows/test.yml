@@ -12,18 +12,18 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/puppeteer/puppeteer:latest
-      options: --user 1001
+      # options: --user 1001
     services:
       juice_shop_app:
         image: bkimminich/juice-shop
-        # ports:
-        #   - 3000:3000
+        ports:
+          - 3000:3000
     steps:
       # - uses: browser-actions/setup-chrome@latest
-      - name: Sleep for 10 seconds
-        run: sleep 10s
-        shell: bash
-      - uses: actions/checkout@v3
+      # - name: Sleep for 10 seconds
+      #   run: sleep 10s
+      #   shell: bash
+      # - uses: actions/checkout@v3
       # - uses: actions/setup-node@v3
       #   with:
       #     node-version: 18
