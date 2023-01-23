@@ -3,7 +3,7 @@ module.exports = {
     headless: true,
     args: ["--window-size=1920,1080"],
     defaultViewport: null,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    // args: ["--no-sandbox", "--disable-setuid-sandbox"],
   },
   product: "chromium",
 };

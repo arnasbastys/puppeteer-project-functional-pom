@@ -19,7 +19,7 @@ jobs:
       juice_shop_app:
         image: bkimminich/juice-shop
         ports:
-          - 3001:3001
+          - 3000:3000
     steps:
       # - uses: browser-actions/setup-chrome@latest
       # - name: Sleep for 10 seconds
@@ -43,10 +43,10 @@ jobs:
         run: curl localhost
       - name: Curl2
         continue-on-error: true
-        run: curl 0.0.0.0:3001
+        run: curl 0.0.0.0:3000
       - name: Curl3
         continue-on-error: true
-        run: curl juice_shop_app:3001
+        run: curl juice_shop_app:3000
       - name: Test pages
         run: yarn && yarn test
       # - name: Archive test report
