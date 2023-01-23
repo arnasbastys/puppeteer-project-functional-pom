@@ -10,45 +10,15 @@ on:
 jobs:
   test-chrome:
     runs-on: ubuntu-latest
-    # container:
-    #   image: ghcr.io/puppeteer/puppeteer:latest
-    #   options: >-
-    #     --cap-add=SYS_ADMIN
-    #     --user 1001
     services:
       juice_shop_app:
         image: bkimminich/juice-shop
         ports:
           - 3000:3000
     steps:
-      # - uses: browser-actions/setup-chrome@latest
-      # - name: Sleep for 10 seconds
-      #   run: sleep 10s
-      #   shell: bash
       - uses: actions/checkout@v3
-      # - uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 18
-      # - name: Install missing deps
-      # run: >
-      #   apt-get install -yq gconf-service libasound2 libatk1.0-0 libc6 libcairo2
-      #   libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4
-      #   libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0
-      #   libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1
-      #   libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1
-      #   libxss1 libxtst6 ca-certificates fonts-liberation libnss3 lsb-release
-      #   xdg-utils wget
-      # - name: Curl1
-      #   continue-on-error: true
-      #   run: curl localhost
-      # - name: Curl2
-      #   continue-on-error: true
-      #   run: curl 0.0.0.0:3000
-      # - name: Curl3
-      #   continue-on-error: true
-      #   run: curl juice_shop_app:3000
       - name: Test pages
-        run: npm i && npm test
+        run: yarn i && yarn test
       # - name: Archive test report
       #   uses: actions/upload-artifact@v3
       #   with:
