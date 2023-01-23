@@ -39,10 +39,13 @@ jobs:
       #   libxss1 libxtst6 ca-certificates fonts-liberation libnss3 lsb-release
       #   xdg-utils wget
       - name: Curl1
+        continue-on-error: true
         run: curl localhost:3000
       - name: Curl2
+        continue-on-error: true
         run: curl 127.0.0.1:3000
       - name: Curl3
+        continue-on-error: true
         run: curl juice_shop_app:3000
       - name: Test pages
         run: yarn && yarn test
