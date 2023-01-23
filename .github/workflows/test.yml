@@ -19,7 +19,7 @@ jobs:
       juice_shop_app:
         image: bkimminich/juice-shop
         ports:
-          - 3000:3000
+          - 3001:3001
     steps:
       # - uses: browser-actions/setup-chrome@latest
       # - name: Sleep for 10 seconds
@@ -40,7 +40,7 @@ jobs:
       #   xdg-utils wget
       - name: Curl1
         continue-on-error: true
-        run: curl http://192.168.99.100:3000
+        run: curl localhost
       - name: Curl2
         continue-on-error: true
         run: curl 127.0.0.1:3000
