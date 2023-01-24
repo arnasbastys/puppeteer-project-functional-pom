@@ -12,3 +12,4 @@ services:
       - ./:/home/pptruser
     cap_add:
       - SYS_ADMIN
+    user: pptruser
