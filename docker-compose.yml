@@ -10,3 +10,5 @@ services:
       - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
     volumes:
       - ./:/home/pptruser
+    cap_add:
+      - SYS_ADMIN
