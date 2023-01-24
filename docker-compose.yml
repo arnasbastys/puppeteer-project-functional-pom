@@ -13,3 +13,5 @@ services:
     cap_add:
       - SYS_ADMIN
     user: root
+    expose:
+      - "3000"
