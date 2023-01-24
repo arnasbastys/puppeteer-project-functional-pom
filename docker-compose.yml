@@ -6,10 +6,10 @@ services:
   puppeteer:
     image: ghcr.io/puppeteer/puppeteer:latest
     command: sh -c "yarn && node node_modules/puppeteer/install.js && yarn test"
-    environment:
-      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+    # environment:
+    #   - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
     volumes:
       - ./:/home/pptruser
     cap_add:
       - SYS_ADMIN
-    user: pptruser
+    user: root
