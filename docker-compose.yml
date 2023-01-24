@@ -11,7 +11,7 @@ services:
     volumes:
       - ./:/home/pptruser
     environment:
-      - docker_running="true"
+      - docker_running=true
     cap_add:
       - SYS_ADMIN
     user: root
