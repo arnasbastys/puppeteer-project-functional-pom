@@ -18,7 +18,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Test pages
-        run: yarn && node node_modules/puppeteer/install.js && yarn test
+        run: docker compose up
+        # run: yarn && node node_modules/puppeteer/install.js && yarn test
       # - name: Archive test report
       #   uses: actions/upload-artifact@v3
       #   with:

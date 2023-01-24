@@ -19,9 +19,10 @@ export const createUserAndLoginTask = async () => {
   await page.setCookie({
     name: "token",
     value: token,
+    url: baseUrl,
   });
 
-  await page.evaluate(() => {
+  await page.evaluateOnNewDocument((token) => {
     localStorage.setItem("token", token);
-  });
+  }, token);
 };

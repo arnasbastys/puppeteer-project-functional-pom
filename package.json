@@ -5,7 +5,7 @@
   "author": "arnasbastys <arnas.bastys@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest --runInBand"
   },
   "module": "es2022",
   "devDependencies": {

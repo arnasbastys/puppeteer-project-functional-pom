@@ -12,3 +12,16 @@ export const user = {
   securityAnswer: faker.lorem.word(),
   password: faker.internet.password(),
 };
+
+export const disableAllBannersCookies = [
+  {
+    name: "cookieconsent_status",
+    value: "dismiss",
+    url: baseUrl,
+  },
+  {
+    name: "welcomebanner_status",
+    value: "dismiss",
+    url: baseUrl,
+  },
+];

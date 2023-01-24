@@ -1,0 +1,12 @@
+services:
+  juice_shop_app:
+    image: bkimminich/juice-shop
+    ports:
+      - 3000:3000
+  puppeteer:
+    image: ghcr.io/puppeteer/puppeteer:latest
+    command: sh -c "yarn && node node_modules/puppeteer/install.js && yarn test"
+    environment:
+      - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+    volumes:
+      - ./:/home/pptruser

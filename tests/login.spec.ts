@@ -1,25 +1,12 @@
-import { baseUrl } from "@constants";
+import { baseUrl, disableAllBannersCookies } from "@constants";
 import { loginPage, registerUserTask, User, navigationBar } from "@pom";
-
-const cookiesToSet = [
-  {
-    name: "cookieconsent_status",
-    value: "dismiss",
-    url: baseUrl,
-  },
-  {
-    name: "welcomebanner_status",
-    value: "dismiss",
-    url: baseUrl,
-  },
-];
 
 describe("Login", () => {
   let registeredUser: User;
 
   beforeAll(async () => {
     registeredUser = await registerUserTask();
-    await page.setCookie(...cookiesToSet);
+    await page.setCookie(...disableAllBannersCookies);
     await page.goto(`${baseUrl}/#/login`, { waitUntil: "domcontentloaded" });
   });
 
