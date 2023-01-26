@@ -14,7 +14,7 @@ export const registerUserTask = async () => {
     },
     securityAnswer: user.securityAnswer,
   };
-  console.log(baseUrl);
+
   const userResponse = await axios.post(`${baseUrl}/api/Users/`, userData);
 
   expect(userResponse.status).toEqual(201);

@@ -11,6 +11,8 @@ module.exports = {
       width: 1512,
       height: 982,
     },
+    // devtools: true,
+    // slowMo: 100,
   },
   dumpio: true,
   product: "chromium",

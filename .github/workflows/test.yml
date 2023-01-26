@@ -1,5 +1,4 @@
-name: Launch tests on chrome and firefox with docker
-
+name: Launch tests on chrome
 on:
   workflow_dispatch:
   push:
@@ -17,37 +16,5 @@ jobs:
           - 3000:3000
     steps:
       - uses: actions/checkout@v3
-      - name: Test pages
+      - name: Test app
         run: yarn && node node_modules/puppeteer/install.js && yarn test
-      # - name: Archive test report
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: test-results-chrome
-      #     path: logs/testResults.json
-      # - name: Archive video
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: archive-video-chrome
-      #     path: cypress/videos
-
-  # test-firefox:
-  #   runs-on: ubuntu-latest
-  #   services:
-  #     juice_shop_app:
-  #       image: bkimminich/juice-shop
-  #       ports:
-  #         - 3000:3000
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - name: Test pages
-  #       run: yarn && yarn test
-  # - name: Archive test report
-  #   uses: actions/upload-artifact@v3
-  #   with:
-  #     name: test-results-firefox
-  #     path: logs/testResults.json
-  # - name: Archive video
-  #   uses: actions/upload-artifact@v3
-  #   with:
-  #     name: archive-video-firefox
-  #     path: cypress/videos

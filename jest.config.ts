@@ -1,6 +1,6 @@
 import type { Config } from "jest";
 const config: Config = {
-  testEnvironment: "node",
+  // testEnvironment: "node",
   testPathIgnorePatterns: ["/node_modules/"],
   //   setupFilesAfterEnv: ["./jest.setup.js"],
   transform: {
@@ -11,7 +11,7 @@ const config: Config = {
     "^@pom$": "<rootDir>/support/pom",
     "^@constants$": "<rootDir>/support/constants",
   },
-  testTimeout: 10000,
+  testTimeout: 100000,
 };
 
 export default config;

@@ -3,7 +3,7 @@ import { faker } from "@faker-js/faker";
 export const baseUrl =
   process.env.docker_running === "true"
     ? `http://juice_shop_app:3000`
-    : `http://juice_shop_app:3000`;
+    : `http://localhost:3000`;
 
 export const user = {
   firstName: faker.name.firstName(),

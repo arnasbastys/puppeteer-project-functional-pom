@@ -8,7 +8,7 @@ describe("Logout", () => {
     await page.goto(`${baseUrl}/#/search`, { waitUntil: "domcontentloaded" });
   });
 
-  it("User is able successfully login", async () => {
+  it("User is able successfully logout", async () => {
     const accountLoggedIn = await page.waitForSelector(navigationBar.account);
     await accountLoggedIn.click();
     const logoutMenuItem = await page.waitForSelector(navigationBar.logout);
