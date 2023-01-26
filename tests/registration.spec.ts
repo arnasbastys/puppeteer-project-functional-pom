@@ -12,8 +12,8 @@ describe("Registration", () => {
     await page.type(registrationPage.password, user.password);
     await page.type(registrationPage.repeatPassword, user.password);
     await page.click(registrationPage.securityQuestion);
-    const [answer] = await page.$x(
-      `//span[contains(., "${registrationPage.securityQuestionMovie}")]`
+    const answer = await page.waitForSelector(
+      `text/${registrationPage.securityQuestionMovie}`
     );
     if (answer) {
       await answer.click();
